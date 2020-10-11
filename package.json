@@ -1,5 +1,5 @@
 {
-  "name": "@larsroettig/pwa-studio-extension-starter",
+  "name": "@larsroettig/pwa-studio-extension-example",
   "version": "0.0.1",
   "main": "src/index.js",
   "author": "Lars Roettig <hello@larsroettig.de>",
@@ -20,7 +20,8 @@
     "lint": "eslint --ignore-path .gitignore 'src/**/{*.js,package.json}'",
     "test": "jest",
     "test:dev": "jest --watch",
-    "prepare": "install-peers"
+    "prepare": "install-peers",
+    "install-peer": "install-peers"
   },
   "lint-staged": {
     "./src/**/*.{ts,js,jsx,tsx}": [
@@ -33,17 +34,32 @@
       "pre-commit": "lint-staged"
     }
   },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-regular-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.11"
+  },
   "peerDependencies": {
     "@magento/pwa-buildpack": ">=6.0.0",
-    "react": "~16.9.0"
+    "@magento/venia-ui": ">=4.0.0",
+    "react": "~16.9.0",
+    "react-dom": "^16.12.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-proposal-class-properties": "~7.3.4",
+    "@babel/plugin-proposal-object-rest-spread": "~7.3.4",
+    "@babel/plugin-syntax-dynamic-import": "~7.2.0",
     "@babel/plugin-syntax-jsx": "^7.10.4",
+    "@babel/plugin-transform-react-jsx": "~7.3.0",
+    "@babel/plugin-transform-runtime": "~7.4.4",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
     "@magento/eslint-config": "latest",
     "@testing-library/react": "^11.0.4",
     "babel-eslint": "~10.0.1",
+    "babel-jest": "^26.5.2",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
@@ -55,6 +71,7 @@
     "jest": "^26.4.2",
     "lint-staged": "^10.0.8",
     "prettier": "^1.9.2",
-    "prettier-check": "^2.0.0"
+    "prettier-check": "^2.0.0",
+    "react-test-renderer": "^16.13.1"
   }
 }

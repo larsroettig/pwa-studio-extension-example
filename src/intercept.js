@@ -13,4 +13,14 @@ module.exports = targets => {
      */
     flags[targets.name] = { esModules: true, cssModules: true };
   });
+
+  targets.of('@magento/venia-ui').richContentRenderers.tap(renderers =>
+    renderers.add({
+      componentName: 'FontAwesomeRenderer',
+      /**
+       * this is resolved by the main file see package.json
+       */
+      importPath: '@larsroettig/pwa-studio-extension-example'
+    })
+  );
 };

@@ -5,3 +5,10 @@
  * A project index.js should contain default exports like:
  * export { default } from './components/main';
  */
+
+/**
+ * [START] Exports for RichContentRenderer:
+ * https://magento.github.io/pwa-studio/venia-ui/reference/targets/#richcontentrenderer--object
+ */
+export { default as Component } from 'fontAwesomeRenderer';
+export { default as canRender } from 'detectFontAwesome';
