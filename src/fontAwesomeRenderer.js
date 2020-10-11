@@ -7,8 +7,8 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 
 library.add(fas);
 
-import PlainHtmlRenderer from './components/PlainHtmlRenderer';
-
+import { Component as PlainHtmlRenderer } from '@magento/venia-ui/lib/components/RichContent/plainHtmlRenderer';
+import ProductSort from '@magento/venia-ui/lib/components/ProductSort';
 /**
  *
  * @param props
@@ -19,7 +19,12 @@ export default function FontAwesomeRenderer(props) {
   let html = props.html;
   const result = html.match(/:FontAwesome:[\w\d-]*/g);
   const iconTemplate = iconName =>
-    renderToString(<FontAwesomeIcon icon={iconName} />);
+    renderToString(
+      <div>
+        <ProductSort />
+        <FontAwesomeIcon icon={iconName} />
+      </div>
+    );
 
   // removes all duplicates
   result.filter((v, i) => result.indexOf(v) === i);
